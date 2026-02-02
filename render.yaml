@@ -14,14 +14,13 @@ services:
         value: 10000
 
   # React Frontend (Static Site)
-  - type: web
+  - type: static_site
     name: nexalend-frontend
-    env: static
     buildCommand: cd frontend && npm install && npm run build
     publishPath: ./frontend/dist
     envVars:
       - key: VITE_API_URL
-        value: https://nexalend-backend.onrender.com # Change this after first deploy
+        value: https://nexalend-backend.onrender.com
 
 databases:
   - name: nexalend_db
