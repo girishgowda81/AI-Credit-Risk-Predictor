@@ -13,9 +13,10 @@ services:
       - key: PORT
         value: 10000
 
-  # React Frontend (Static Site)
-  - type: static_site
+  # React Frontend (Static Site on Render is type: web with env: static)
+  - type: web
     name: nexalend-frontend
+    env: static
     buildCommand: cd frontend && npm install && npm run build
     publishPath: ./frontend/dist
     envVars:
